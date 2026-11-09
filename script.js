@@ -1,7 +1,5 @@
-const greetButton = document.getElementById("greetButton");
-const greeting = document.getElementById("greeting");
-
-greetButton.addEventListener("click", function () {
-  greeting.textContent = "สวัสดีทุกคน! ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ของฉัน 😊";
-  greetButton.textContent = "ทักทายแล้ว!";
+const greetingBtn = document.getElementById('greetingBtn');
+const message = document.getElementById('greetingMessage');
+greetingBtn.addEventListener('click', function () {
+    message.textContent = 'สวัสดีครับ ยินดีที่ได้รู้จักครับ';
 });
