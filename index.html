@@ -1,41 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เว็บไซต์แนะนำตัวเอง</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <main class="profile-card">
-    <img
-      src="images/profile.jpg"
-      alt="รูปโปรไฟล์ของฉัน"
-      class="profile-image"
-    >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Developer Portfolio" />
+    <title>My Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">My Portfolio</a>
+      <nav class="site-nav" aria-label="เมนูหลัก">
+        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#projects">ผลงาน</a>
+      </nav>
+    </header>
 
-    <h1>สวัสดีครับ/ค่ะ 👋</h1>
-    <p class="subtitle">ยินดีต้อนรับสู่เว็บไซต์แนะนำตัวของฉัน</p>
+    <main class="portfolio-main" id="top">
+      <section class="profile-card" id="about" aria-labelledby="profile-title">
+        <img src="../images/daha.jpg" alt="รูปโปรไฟล์" class="profile-image" />
+        <div class="profile-content">
+          <p class="eyebrow">ABOUT ME</p>
+          <h1 id="profile-title">My Profile</h1>
+          <p>ชื่อ-นามสกุล: <span id="fullname">[ชื่อ-นามสกุล]</span>นาย ภูวดล น่วมอนงค์</p>
+          <p>ชื่อเล่น: <span id="nickname">[ชื่อเล่น]</span>ดาฮา</p>
+          <p>รหัสประจำตัว: <span id="studentID">[รหัสประจำตัว]</span>68219010021</p>
+          <div class="motto">
+            <h2>คติประจำใจ</h2>
+            <p id="motto-text">[ความพยายามอยู่ที่ไหน ความสำเร็จอยู่ที่นั่น]</p>
+          </div>
+          <button id="greetingBtn" type="button">ทักทาย</button>
+          <p id="greetingMessage" aria-live="polite">
+            ยินดีต้อนรับเข้าสู่โปรไฟล์ของฉัน
+          </p>
+        </div>
+      </section>
 
-    <section class="profile-info">
-      <p><strong>ชื่อ–นามสกุล:</strong> นาย ภูวดล น่วมอนงค์</p>
-      <p><strong>ชื่อเล่น:</strong> ดาฮา</p>
-      <p><strong>รหัสนักเรียน:</strong> 68219010021</p>
-    </section>
+      <section
+        class="content-section"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">WHAT I KNOW</p>
+          <h2 id="skills-title">ทักษะที่สนใจ</h2>
+        </div>
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
 
-    <section class="motto">
-      <h2>คติประจำใจ</h2>
-      <p>ความพยายามอยู่ที่ไหน ความสำเร็จอยู่ที่นั่น</p>
-    </section>
+      <section
+        class="content-section"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">MY WORK</p>
+          <h2 id="projects-title">ผลงานของฉัน</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>My Developer Profile</h3>
+            <p>
+              เว็บไซต์แนะนำตัวที่พัฒนาด้วย HTML, CSS และ JavaScript
+              เพื่อฝึกสร้างโครงสร้างเว็บ การตกแต่งหน้าเว็บไซต์
+              และการโต้ตอบกับผู้ใช้
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-    <button id="greetButton" type="button">
-      กดเพื่อทักทาย
-    </button>
-
-    <p id="greeting" aria-live="polite">
-      ยินดีที่ได้รู้จักทุกคนนะ!
-    </p>
-  </main>
-</body>
+    <footer class="site-footer">
+      <p>My Developer Portfolio</p>
+      <p>สร้างด้วย HTML, CSS และ JavaScript</p>
+    </footer>
+  </body>
 </html>
