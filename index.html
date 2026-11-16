@@ -1,84 +1,205 @@
+
 <!doctype html>
 <html lang="th">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="My Developer Portfolio" />
+
     <title>My Developer Portfolio</title>
+
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-  </head>
-  <body>
+</head>
+
+<body>
+
+    <!-- ส่วนหัวเว็บไซต์ -->
     <header class="site-header">
-      <a class="brand" href="#top">My Portfolio</a>
-      <nav class="site-nav" aria-label="เมนูหลัก">
-        <a href="#about">เกี่ยวกับฉัน</a>
-        <a href="#skills">ทักษะ</a>
-        <a href="#projects">ผลงาน</a>
-      </nav>
+
+        <a class="brand" href="#top">My Portfolio</a>
+
+        <nav class="site-nav" aria-label="เมนูหลัก">
+            <a href="#about">เกี่ยวกับฉัน</a>
+            <a href="#skills">ทักษะ</a>
+            <a href="#projects">ผลงาน</a>
+            <a href="#estimator">ประมาณราคา</a>
+        </nav>
+
     </header>
 
+
     <main class="portfolio-main" id="top">
-      <section class="profile-card" id="about" aria-labelledby="profile-title">
-        <img src="../images/daha.jpg" alt="รูปโปรไฟล์" class="profile-image" />
-        <div class="profile-content">
-          <p class="eyebrow">ABOUT ME</p>
-          <h1 id="profile-title">My Profile</h1>
-          <p>ชื่อ-นามสกุล: <span id="fullname">[ชื่อ-นามสกุล]</span>นาย ภูวดล น่วมอนงค์</p>
-          <p>ชื่อเล่น: <span id="nickname">[ชื่อเล่น]</span>ดาฮา</p>
-          <p>รหัสประจำตัว: <span id="studentID">[รหัสประจำตัว]</span>68219010021</p>
-          <div class="motto">
-            <h2>คติประจำใจ</h2>
-            <p id="motto-text">[ความพยายามอยู่ที่ไหน ความสำเร็จอยู่ที่นั่น]</p>
-          </div>
-          <button id="greetingBtn" type="button">ทักทาย</button>
-          <p id="greetingMessage" aria-live="polite">
-            ยินดีต้อนรับเข้าสู่โปรไฟล์ของฉัน
-          </p>
-        </div>
-      </section>
 
-      <section
-        class="content-section"
-        id="skills"
-        aria-labelledby="skills-title"
-      >
-        <div class="section-heading">
-          <p class="eyebrow">WHAT I KNOW</p>
-          <h2 id="skills-title">ทักษะที่สนใจ</h2>
-        </div>
-        <ul class="skills-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
-      </section>
+        <!-- ส่วนที่ 1 ข้อมูลส่วนตัว -->
+        <section class="profile-card" id="about" aria-labelledby="profile-title">
 
-      <section
-        class="content-section"
-        id="projects"
-        aria-labelledby="projects-title"
-      >
-        <div class="section-heading">
-          <p class="eyebrow">MY WORK</p>
-          <h2 id="projects-title">ผลงานของฉัน</h2>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>My Developer Profile</h3>
-            <p>
-              เว็บไซต์แนะนำตัวที่พัฒนาด้วย HTML, CSS และ JavaScript
-              เพื่อฝึกสร้างโครงสร้างเว็บ การตกแต่งหน้าเว็บไซต์
-              และการโต้ตอบกับผู้ใช้
-            </p>
-          </article>
-        </div>
-      </section>
+            <img src="images/daha.jpg" alt="รูปโปรไฟล์" class="profile-image" />
+
+            <div class="profile-content">
+
+                <p class="eyebrow">ABOUT ME</p>
+
+                <h1 id="profile-title">My Profile</h1>
+
+                <p>
+                    ชื่อ-นามสกุล:
+                    <span id="fullname">นาย ภูวดล น่วมอนงค์</span>
+                </p>
+
+                <p>
+                    ชื่อเล่น:
+                    <span id="nickname">ดาฮา</span>
+                </p>
+
+                <p>
+                    รหัสประจำตัว:
+                    <span id="studentID">68219010021</span>
+                </p>
+
+                <div class="motto">
+
+                    <h2>คติประจำใจ</h2>
+
+                    <p id="motto-text">
+                        ความพยายามอยู่ที่ไหน ความสำเร็จอยู่ที่นั่น
+                    </p>
+
+                </div>
+
+                <!-- ปุ่มทักทาย -->
+                <button id="greetingBtn" type="button">
+                    ทักทาย
+                </button>
+
+                <!-- พื้นที่แสดงข้อความต้อนรับ -->
+                <p id="greetingMessage" aria-live="polite">
+                    ยินดีต้อนรับเข้าสู่โปรไฟล์ของฉัน
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ส่วนทักษะ -->
+        <section
+            class="content-section"
+            id="skills"
+            aria-labelledby="skills-title"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">WHAT I KNOW</p>
+
+                <h2 id="skills-title">ทักษะที่สนใจ</h2>
+
+            </div>
+
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ส่วนผลงาน -->
+        <section
+            class="content-section"
+            id="projects"
+            aria-labelledby="projects-title"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">MY WORK</p>
+
+                <h2 id="projects-title">ผลงานของฉัน</h2>
+
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+
+                    <h3>My Developer Profile</h3>
+
+                    <p>
+                        เว็บไซต์แนะนำตัวที่พัฒนาด้วย HTML, CSS และ JavaScript
+                        เพื่อฝึกสร้างโครงสร้างเว็บ การตกแต่งหน้าเว็บไซต์
+                        และการโต้ตอบกับผู้ใช้
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ส่วนที่ 2 ระบบประมาณการค่าบริการเว็บไซต์ -->
+        <section
+            class="content-section"
+            id="estimator"
+            aria-labelledby="estimator-title"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">WEBSITE SERVICE</p>
+
+                <h2 id="estimator-title">
+                    ประมาณการค่าบริการพัฒนาเว็บไซต์
+                </h2>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Website Cost Estimator</h3>
+
+                <p>
+                    ระบบประมาณราคาค่าพัฒนาเว็บไซต์
+                </p>
+
+                <p>
+                    ค่าบริการพัฒนาเว็บไซต์หน้าละ 500 บาท
+                </p>
+
+                <!-- ปุ่มคำนวณราคา -->
+                <button id="calculateBtn" type="button">
+                    คำนวณค่าบริการ
+                </button>
+
+                <!-- พื้นที่แสดงผลการคำนวณ -->
+                <div id="costResult" aria-live="polite">
+
+                    <p>
+                        กรุณากดปุ่มเพื่อประมาณราคาค่าพัฒนาเว็บไซต์
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
+
+    <!-- ส่วนท้ายเว็บไซต์ -->
     <footer class="site-footer">
-      <p>My Developer Portfolio</p>
-      <p>สร้างด้วย HTML, CSS และ JavaScript</p>
+
+        <p>My Developer Portfolio</p>
+
+        <p>สร้างด้วย HTML, CSS และ JavaScript</p>
+
     </footer>
-  </body>
+
+</body>
+
 </html>
