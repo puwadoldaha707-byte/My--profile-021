@@ -300,3 +300,96 @@ button:focus-visible {
     padding: 16px;
   }
 }
+
+/* ==============================
+   10) ระบบต้อนรับผู้เข้าชมเว็บไซต์
+============================== */
+
+#welcomeMessage {
+    margin: 20px auto;
+    padding: 16px 20px;
+    max-width: 900px;
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+    border-left: 5px solid #2563eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* ==============================
+   11) ระบบคำนวณราคาพัฒนาเว็บไซต์
+============================== */
+
+#estimator {
+    margin: 24px auto;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 39, 71, 0.08);
+}
+
+#estimator h2 {
+    margin-top: 0;
+    color: #1e40af;
+}
+
+#estimator p {
+    color: #475569;
+}
+
+#calculateBtn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 12px 24px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#calculateBtn:hover,
+#calculateBtn:focus-visible {
+    background: #1e40af;
+}
+
+#costResult {
+    margin-top: 20px;
+    padding: 16px;
+    min-height: 55px;
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==============================
+   12) รองรับหน้าจอโทรศัพท์
+============================== */
+
+@media (max-width: 600px) {
+    #estimator {
+        padding: 20px;
+    }
+
+    #welcomeMessage {
+        margin: 16px auto;
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+
+    #calculateBtn {
+        width: 100%;
+    }
+}
