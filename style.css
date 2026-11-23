@@ -1,310 +1,309 @@
-/* 1) ตั้งค่า Box Model และป้องกันช่องว่างเกินขนาด */
+
+/* =====================================
+   1. ตั้งค่า Box Model และพื้นฐาน
+===================================== */
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #1e293b;
-  background: #f8fafc;
-  line-height: 1.7;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-/* 2) Header และ Navigation */
+
+/* =====================================
+   2. Header และ Navigation
+===================================== */
+
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 18px 5%;
-  background: #1e40af;
-  color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 5%;
+    background: #1e40af;
+    color: #ffffff;
 }
 
 .brand {
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 22px;
 }
 
 .site-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 6px 2px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 2px;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: #bae6fd;
-  text-decoration: underline;
+    color: #bae6fd;
+    text-decoration: underline;
 }
 
-/* 3) Container หลัก */
+
+/* =====================================
+   3. Container หลัก
+===================================== */
+
 .portfolio-main {
-  width: min(100% - 32px, 1000px);
-  margin: 28px auto;
+    width: min(100% - 32px, 1000px);
+    margin: 28px auto;
 }
 
-/* 4) Profile: จัดรูปและข้อมูลเป็นสองส่วนบนจอกว้าง */
+
+/* =====================================
+   4. Profile
+===================================== */
+
 .profile-card {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  max-width: 900px;
-  margin: 28px auto;
-  padding: 32px;
-  background: #7ad7e4;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(15, 39, 71, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    max-width: 900px;
+    margin: 28px auto;
+    padding: 32px;
+    background: #7ad7e4;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 39, 71, 0.12);
 }
 
 .profile-image {
-  flex: 0 0 150px;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 4px solid #2563eb;
-  border-radius: 50%;
+    flex: 0 0 150px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #2563eb;
+    border-radius: 50%;
 }
 
 .profile-content {
-  flex: 1;
-  min-width: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .profile-content h1 {
-  margin: 0 0 12px;
-  color: #2563eb;
-  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+    margin: 0 0 12px;
+    color: #2563eb;
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
 }
 
 .profile-content p {
-  overflow-wrap: anywhere;
+    overflow-wrap: anywhere;
 }
 
 .eyebrow {
-  margin: 0 0 4px;
-  color: #475569;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+    margin: 0 0 4px;
+    color: #475569;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
 .motto {
-  margin-top: 18px;
-  padding: 14px 16px;
-  background: #ffffff;
-  border-left: 5px solid #2563eb;
-  border-radius: 8px;
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: #ffffff;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
 }
 
 .motto h2 {
-  margin: 0 0 4px;
-  font-size: 1.1rem;
+    margin: 0 0 4px;
+    font-size: 1.1rem;
 }
 
 .motto p {
-  margin: 0;
+    margin: 0;
 }
 
 button {
-  margin-top: 14px;
-  padding: 11px 22px;
-  border: 0;
-  border-radius: 8px;
-  background: #2563eb;
-  color: #ffffff;
-  font-size: 1rem;
-  cursor: pointer;
+    margin-top: 14px;
+    padding: 11px 22px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 button:hover,
 button:focus-visible {
-  background: #1e40af;
+    background: #1e40af;
 }
 
 #greetingMessage {
-  color: #1e40af;
-  font-weight: 700;
+    color: #1e40af;
+    font-weight: 700;
 }
 
-/* 5) Skills และ Projects */
+
+/* =====================================
+   5. Skills และ Projects
+===================================== */
+
 .content-section {
-  width: 100%;
-  margin: 24px auto;
-  padding: 28px;
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  border-radius: 16px;
+    width: 100%;
+    margin: 24px auto;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
 }
 
 .section-heading h2 {
-  margin: 0 0 18px;
-  color: #1e40af;
+    margin: 0 0 18px;
+    color: #1e40af;
 }
 
 .skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .skills-list li {
-  flex: 1 1 150px;
-  padding: 14px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 700;
+    flex: 1 1 150px;
+    padding: 14px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 16px;
 }
 
 .project-card {
-  min-width: 0;
-  padding: 20px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: 12px;
+    min-width: 0;
+    padding: 20px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
 }
 
 .project-card h3 {
-  margin-top: 0;
-  color: #1d4ed8;
+    margin-top: 0;
+    color: #1d4ed8;
 }
 
 .project-card p {
-  overflow-wrap: anywhere;
+    overflow-wrap: anywhere;
 }
 
-/* 6) Footer */
+
+/* =====================================
+   6. ระบบกรองผลงาน
+===================================== */
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    padding: 10px 18px;
+    border: 1px solid #cccccc;
+    border-radius: 25px;
+    background: transparent;
+    color: #222222;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #e5e7eb;
+    color: #222222;
+}
+
+.filter-btn.is-active {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+.project-card[hidden] {
+    display: none !important;
+}
+
+
+/* =====================================
+   7. ปุ่มสลับธีม
+===================================== */
+
+.theme-toggle {
+    padding: 10px 16px;
+    border: 1px solid #cccccc;
+    border-radius: 25px;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: #1e40af;
+}
+
+
+/* =====================================
+   8. Footer
+===================================== */
+
 .site-footer {
-  margin-top: 40px;
-  padding: 24px 16px;
-  background: #0f172a;
-  color: #ffffff;
-  text-align: center;
+    margin-top: 40px;
+    padding: 24px 16px;
+    background: #0f172a;
+    color: #ffffff;
+    text-align: center;
 }
 
 .site-footer p {
-  margin: 4px 0;
+    margin: 4px 0;
 }
 
-/* 7) Tablet: ปรับพื้นที่และระยะห่าง */
-@media (max-width: 768px) {
-  .site-header {
-    padding: 16px 4%;
-  }
 
-  .profile-card {
-    gap: 22px;
-    padding: 24px;
-  }
+/* =====================================
+   9. ระบบต้อนรับผู้เข้าชมเว็บไซต์
+===================================== */
 
-  .content-section {
-    padding: 24px;
-  }
-}
-
-/* 8) Mobile: เรียงองค์ประกอบเป็นแนวตั้ง */
-@media (max-width: 600px) {
-  .site-header {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  .site-nav {
-    justify-content: center;
-    gap: 8px 16px;
-  }
-
-  .portfolio-main {
-    width: calc(100% - 24px);
-    margin: 18px auto;
-  }
-
-  .profile-card {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    padding: 20px;
-  }
-
-  .profile-image {
-    flex-basis: auto;
-    margin: 0 auto;
-  }
-
-  .profile-content h1 {
-    text-align: center;
-  }
-
-  .content-section {
-    padding: 20px;
-  }
-
-  .skills-list {
-    flex-direction: column;
-  }
-
-  .skills-list li {
-    flex-basis: auto;
-    width: 100%;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 9) จอเล็กมาก */
-@media (max-width: 360px) {
-  .brand {
-    font-size: 1.25rem;
-  }
-
-  .site-nav {
-    gap: 6px 10px;
-  }
-
-  .profile-card,
-  .content-section {
-    padding: 16px;
-  }
-}
-
-/* ==============================
-   10) ระบบต้อนรับผู้เข้าชมเว็บไซต์
-============================== */
-
+#visitorWelcome,
 #welcomeMessage {
     margin: 20px auto;
     padding: 16px 20px;
@@ -320,9 +319,9 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   11) ระบบคำนวณราคาพัฒนาเว็บไซต์
-============================== */
+/* =====================================
+   10. ระบบคำนวณราคาพัฒนาเว็บไซต์
+===================================== */
 
 #estimator {
     margin: 24px auto;
@@ -374,15 +373,246 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   12) รองรับหน้าจอโทรศัพท์
-============================== */
+/* =====================================
+   11. ธีม Light Mode
+===================================== */
+
+html[data-theme="light"] body {
+    background-color: #f4f6fb;
+    color: #222222;
+}
+
+
+/* =====================================
+   12. ธีม Dark Mode
+===================================== */
+
+html[data-theme="dark"] body {
+    background-color: #10131c;
+    color: #f1f5f9;
+}
+
+/* Header */
+html[data-theme="dark"] .site-header {
+    background-color: #171c2b;
+    color: #ffffff;
+    border-color: #30384d;
+}
+
+html[data-theme="dark"] .site-header a {
+    color: #ffffff;
+}
+
+/* Profile */
+html[data-theme="dark"] .profile-card {
+    background-color: #171c2b;
+    color: #f1f5f9;
+}
+
+html[data-theme="dark"] .profile-content h1 {
+    color: #60a5fa;
+}
+
+/* หัวข้อและข้อความ */
+html[data-theme="dark"] .eyebrow {
+    color: #cbd5e1;
+}
+
+html[data-theme="dark"] .section-heading h2 {
+    color: #60a5fa;
+}
+
+/* กล่องคติประจำใจ */
+html[data-theme="dark"] .motto {
+    background-color: #222a3c;
+    color: #f1f5f9;
+    border-left-color: #60a5fa;
+}
+
+html[data-theme="dark"] .motto h2,
+html[data-theme="dark"] .motto p {
+    color: #f1f5f9;
+}
+
+/* ส่วนทักษะ */
+html[data-theme="dark"] .content-section {
+    background-color: #171c2b;
+    color: #f1f5f9;
+    border-color: #30384d;
+}
+
+/* แก้ไขช่อง HTML, CSS และ JavaScript */
+html[data-theme="dark"] .skills-list li {
+    background-color: #222a3c;
+    color: #60a5fa;
+    border: 1px solid #39445c;
+    border-radius: 10px;
+}
+
+html[data-theme="dark"] .skills-list li:hover {
+    background-color: #303b55;
+    color: #ffffff;
+}
+
+/* การ์ดผลงาน */
+html[data-theme="dark"] .project-card {
+    background-color: #222a3c;
+    color: #f1f5f9;
+    border-color: #39445c;
+}
+
+html[data-theme="dark"] .project-card h3 {
+    color: #60a5fa;
+}
+
+html[data-theme="dark"] .project-card p {
+    color: #e2e8f0;
+}
+
+/* ปุ่มกรองผลงาน */
+html[data-theme="dark"] .filter-btn {
+    background-color: #222a3c;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+html[data-theme="dark"] .filter-btn:hover {
+    background-color: #303b55;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .filter-btn.is-active {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+/* ปุ่มสลับธีม */
+html[data-theme="dark"] .theme-toggle {
+    background-color: #30384d;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+/* ระบบต้อนรับ */
+html[data-theme="dark"] #visitorWelcome,
+html[data-theme="dark"] #welcomeMessage {
+    background-color: #222a3c;
+    color: #93c5fd;
+    border-color: #39445c;
+}
+
+/* ระบบประมาณราคา */
+html[data-theme="dark"] #estimator {
+    background-color: #171c2b;
+    border-color: #39445c;
+}
+
+html[data-theme="dark"] #estimator h2 {
+    color: #60a5fa;
+}
+
+html[data-theme="dark"] #estimator p {
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] #costResult {
+    background-color: #222a3c;
+    color: #93c5fd;
+    border-color: #39445c;
+}
+
+/* ข้อความทักทาย */
+html[data-theme="dark"] #greetingMessage {
+    color: #93c5fd;
+}
+
+/* Footer */
+html[data-theme="dark"] .site-footer {
+    background-color: #171c2b;
+    color: #ffffff;
+}
+
+
+/* =====================================
+   13. Tablet
+===================================== */
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 16px 4%;
+    }
+
+    .profile-card {
+        gap: 22px;
+        padding: 24px;
+    }
+
+    .content-section {
+        padding: 24px;
+    }
+}
+
+
+/* =====================================
+   14. Mobile
+===================================== */
 
 @media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .site-nav {
+        justify-content: center;
+        gap: 8px 16px;
+    }
+
+    .portfolio-main {
+        width: calc(100% - 24px);
+        margin: 18px auto;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .profile-image {
+        flex-basis: auto;
+        margin: 0 auto;
+    }
+
+    .profile-content h1 {
+        text-align: center;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .skills-list {
+        flex-direction: column;
+    }
+
+    .skills-list li {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     #estimator {
         padding: 20px;
     }
 
+    #visitorWelcome,
     #welcomeMessage {
         margin: 16px auto;
         padding: 14px;
@@ -392,190 +622,28 @@ button:focus-visible {
     #calculateBtn {
         width: 100%;
     }
+
+    .theme-toggle {
+        align-self: center;
+    }
 }
 
 
-/* ==============================
-   13) ระบบกรองผลงานตามหมวดหมู่
-============================== */
+/* =====================================
+   15. จอเล็กมาก
+===================================== */
 
-.project-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0 0 18px;
-}
+@media (max-width: 360px) {
+    .brand {
+        font-size: 1.25rem;
+    }
 
-.project-filters .filter-btn {
-  margin: 0;
-  padding: 9px 16px;
-  background: #e2e8f0;
-  color: #1e293b;
-  border: 1px solid #cbd5e1;
-  border-radius: 999px;
-  font-size: 0.95rem;
-}
+    .site-nav {
+        gap: 6px 10px;
+    }
 
-.project-filters .filter-btn:hover,
-.project-filters .filter-btn:focus-visible,
-.project-filters .filter-btn.is-active {
-  background: #1e40af;
-  color: #ffffff;
-  border-color: #1e40af;
-}
-
-.project-card[hidden] {
-  display: none !important;
-}
-
-.projects-empty {
-  margin: 0 0 16px;
-  padding: 14px;
-  background: #eff6ff;
-  color: #1e40af;
-  border: 1px dashed #93c5fd;
-  border-radius: 10px;
-  text-align: center;
-}
-
-/* ==============================
-   14) ปุ่มสลับ Light / Dark Mode
-============================== */
-
-.site-header .theme-toggle {
-  margin: 0;
-  padding: 9px 14px;
-  background: #ffffff;
-  color: #1e40af;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.site-header .theme-toggle:hover,
-.site-header .theme-toggle:focus-visible {
-  background: #dbeafe;
-  color: #1e3a8a;
-}
-
-/* Dark theme overrides: ใช้สีเดิมของ Light Mode เป็นค่าเริ่มต้น */
-html[data-theme="dark"] body {
-  color: #e2e8f0;
-  background: #0f172a;
-}
-
-html[data-theme="dark"] .site-header {
-  background: #020617;
-}
-
-html[data-theme="dark"] .profile-card {
-  background: #164e63;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
-}
-
-html[data-theme="dark"] .profile-content h1,
-html[data-theme="dark"] .section-heading h2,
-html[data-theme="dark"] #estimator h2,
-html[data-theme="dark"] .project-card h3 {
-  color: #93c5fd;
-}
-
-html[data-theme="dark"] .eyebrow {
-  color: #cbd5e1;
-}
-
-html[data-theme="dark"] .motto,
-html[data-theme="dark"] .content-section,
-html[data-theme="dark"] #estimator {
-  background: #1e293b;
-  color: #e2e8f0;
-  border-color: #475569;
-}
-
-html[data-theme="dark"] .motto {
-  border-left-color: #60a5fa;
-}
-
-html[data-theme="dark"] .motto h2,
-html[data-theme="dark"] .motto p,
-html[data-theme="dark"] #estimator p {
-  color: #e2e8f0;
-}
-
-html[data-theme="dark"] .project-card,
-html[data-theme="dark"] .skills-list li {
-  background: #273449;
-  color: #e2e8f0;
-  border-color: #475569;
-}
-
-html[data-theme="dark"] #greetingMessage {
-  color: #bfdbfe;
-}
-
-html[data-theme="dark"] #costResult {
-  background: #172554;
-  color: #dbeafe;
-  border-color: #1d4ed8;
-}
-
-html[data-theme="dark"] .projects-empty {
-  background: #172554;
-  color: #dbeafe;
-  border-color: #3b82f6;
-}
-
-html[data-theme="dark"] .project-filters .filter-btn {
-  background: #334155;
-  color: #e2e8f0;
-  border-color: #475569;
-}
-
-html[data-theme="dark"] .project-filters .filter-btn:hover,
-html[data-theme="dark"] .project-filters .filter-btn:focus-visible,
-html[data-theme="dark"] .project-filters .filter-btn.is-active {
-  background: #2563eb;
-  color: #ffffff;
-  border-color: #2563eb;
-}
-
-html[data-theme="dark"] .site-header .theme-toggle {
-  background: #334155;
-  color: #f8fafc;
-  border-color: #64748b;
-}
-
-html[data-theme="dark"] .site-header .theme-toggle:hover,
-html[data-theme="dark"] .site-header .theme-toggle:focus-visible {
-  background: #475569;
-}
-
-html[data-theme="dark"] button {
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-@media (max-width: 600px) {
-  .site-header .theme-toggle {
-    align-self: center;
-  }
-
-  .project-filters {
-    gap: 8px;
-  }
-
-  .project-filters .filter-btn {
-    flex: 1 1 auto;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  body,
-  .site-header,
-  .profile-card,
-  .content-section,
-  .project-card,
-  .skills-list li {
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  }
+    .profile-card,
+    .content-section {
+        padding: 16px;
+    }
 }
