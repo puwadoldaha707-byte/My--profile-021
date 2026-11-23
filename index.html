@@ -27,11 +27,11 @@
             <a href="#estimator">ประมาณราคา</a>
         </nav>
 
+        <!-- ปุ่มสลับ Light Mode / Dark Mode -->
         <button
             id="themeToggle"
             class="theme-toggle"
             type="button"
-            aria-label="เปลี่ยนเป็นโหมดมืด"
             aria-pressed="false"
         >
             🌙 Dark Mode
@@ -39,13 +39,19 @@
 
     </header>
 
-
     <main class="portfolio-main" id="top">
 
         <!-- ส่วนที่ 1 ข้อมูลส่วนตัว -->
         <section class="profile-card" id="about" aria-labelledby="profile-title">
 
-            <img src="images/daha.jpg" alt="รูปโปรไฟล์" class="profile-image" />
+            <!-- รูปโปรไฟล์ -->
+            <img
+                src="./images/daha.jpg"
+                alt="รูปโปรไฟล์ของฉัน"
+                class="profile-image"
+                id="profileImage"
+                onerror="this.alt='ไม่พบรูปภาพ กรุณาตรวจสอบโฟลเดอร์ images'; this.style.background='#e2e8f0';"
+            />
 
             <div class="profile-content">
 
@@ -92,7 +98,6 @@
 
         </section>
 
-
         <!-- ส่วนทักษะ -->
         <section
             class="content-section"
@@ -116,7 +121,6 @@
 
         </section>
 
-
         <!-- ส่วนผลงาน -->
         <section
             class="content-section"
@@ -132,18 +136,31 @@
 
             </div>
 
-            <div class="project-filters" role="group" aria-label="กรองผลงานตามหมวดหมู่">
-                <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">ทั้งหมด</button>
-                <button class="filter-btn" type="button" data-filter="web-development" aria-pressed="false">Web Development</button>
+            <!-- ระบบกรองผลงานตามหมวดหมู่ -->
+            <div class="project-filters">
+
+                <button class="filter-btn is-active" type="button" data-filter="all">
+                    ทั้งหมด
+                </button>
+
+                <button class="filter-btn" type="button" data-filter="html">
+                    HTML
+                </button>
+
+                <button class="filter-btn" type="button" data-filter="css">
+                    CSS
+                </button>
+
+                <button class="filter-btn" type="button" data-filter="javascript">
+                    JavaScript
+                </button>
+
             </div>
 
-            <p id="projectsEmpty" class="projects-empty" hidden>
-                ไม่พบผลงานในหมวดหมู่นี้
-            </p>
-
+            <!-- รายการผลงาน -->
             <div class="projects-grid">
 
-                <article class="project-card" data-category="web-development">
+                <article class="project-card" data-category="html">
 
                     <h3>My Developer Profile</h3>
 
@@ -159,8 +176,7 @@
 
         </section>
 
-
-        <!-- ส่วนที่ 2 ระบบประมาณการค่าบริการเว็บไซต์ -->
+        <!-- ส่วนระบบประมาณการค่าบริการเว็บไซต์ -->
         <section
             class="content-section"
             id="estimator"
@@ -181,20 +197,14 @@
 
                 <h3>Website Cost Estimator</h3>
 
-                <p>
-                    ระบบประมาณราคาค่าพัฒนาเว็บไซต์
-                </p>
+                <p>ระบบประมาณราคาค่าพัฒนาเว็บไซต์</p>
 
-                <p>
-                    ค่าบริการพัฒนาเว็บไซต์หน้าละ 500 บาท
-                </p>
+                <p>ค่าบริการพัฒนาเว็บไซต์หน้าละ 500 บาท</p>
 
-                <!-- ปุ่มคำนวณราคา -->
                 <button id="calculateBtn" type="button">
                     คำนวณค่าบริการ
                 </button>
 
-                <!-- พื้นที่แสดงผลการคำนวณ -->
                 <div id="costResult" aria-live="polite">
 
                     <p>
@@ -209,7 +219,6 @@
 
     </main>
 
-
     <!-- ส่วนท้ายเว็บไซต์ -->
     <footer class="site-footer">
 
@@ -220,5 +229,5 @@
     </footer>
 
 </body>
-
 </html>
+
