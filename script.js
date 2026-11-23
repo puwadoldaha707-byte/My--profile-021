@@ -66,3 +66,92 @@ if (calculateBtn && costResult) {
             'ราคารวมทั้งหมด: ' + totalCost.toLocaleString('th-TH') + ' บาท';
     });
 }
+
+
+// ==============================
+// 4. ระบบกรองผลงานตามหมวดหมู่
+// ==============================
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card[data-category]');
+const projectsEmpty = document.getElementById('projectsEmpty');
+
+if (filterButtons.length && projectCards.length) {
+    filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const selectedCategory = button.dataset.filter;
+            let visibleCount = 0;
+
+            filterButtons.forEach(function (filterButton) {
+                const isActive = filterButton === button;
+                filterButton.classList.toggle('is-active', isActive);
+                filterButton.setAttribute('aria-pressed', String(isActive));
+            });
+
+            projectCards.forEach(function (card) {
+                const shouldShow =
+                    selectedCategory === 'all' ||
+                    card.dataset.category === selectedCategory;
+
+                card.hidden = !shouldShow;
+
+                if (shouldShow) {
+                    visibleCount += 1;
+                }
+            });
+
+            if (projectsEmpty) {
+                projectsEmpty.hidden = visibleCount !== 0;
+            }
+        });
+    });
+}
+
+
+// ==============================
+// 5. ระบบสลับ Light / Dark Mode
+// ==============================
+const themeToggle = document.getElementById('themeToggle');
+const savedThemeKey = 'portfolio-theme';
+
+function applyTheme(theme) {
+    const isDark = theme === 'dark';
+
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+
+    if (themeToggle) {
+        themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+        themeToggle.setAttribute(
+            'aria-label',
+            isDark ? 'เปลี่ยนเป็นโหมดสว่าง' : 'เปลี่ยนเป็นโหมดมืด'
+        );
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+    }
+}
+
+let initialTheme = 'light';
+
+try {
+    const savedTheme = localStorage.getItem(savedThemeKey);
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+        initialTheme = savedTheme;
+    }
+} catch (error) {
+    // หากเบราว์เซอร์ไม่อนุญาต localStorage ให้ใช้ Light Mode ตามปกติ
+}
+
+applyTheme(initialTheme);
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+        const nextTheme =
+            document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+
+        applyTheme(nextTheme);
+
+        try {
+            localStorage.setItem(savedThemeKey, nextTheme);
+        } catch (error) {
+            // ยังสลับธีมได้ แม้จะบันทึกค่าลง localStorage ไม่ได้
+        }
+    });
+}
