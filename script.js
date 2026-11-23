@@ -18,12 +18,13 @@ if (greetingBtn && message) {
 let visitorName = prompt('กรุณากรอกชื่อของคุณ');
 
 if (visitorName && visitorName.trim() !== '') {
-    document.getElementById('fullname')?.textContent;
     const welcomeMessage = document.createElement('p');
+
     welcomeMessage.textContent =
         'ยินดีต้อนรับคุณ ' + visitorName.trim() +
         ' เข้าสู่เว็บไซต์ Portfolio ของฉัน';
 
+    welcomeMessage.id = 'visitorWelcome';
     document.body.prepend(welcomeMessage);
 }
 
@@ -34,7 +35,7 @@ if (visitorName && visitorName.trim() !== '') {
 const calculateBtn = document.getElementById('calculateBtn');
 const costResult = document.getElementById('costResult');
 
-const pricePerPage = 500; // ราคาหน้าละ 500 บาท
+const pricePerPage = 500;
 
 if (calculateBtn && costResult) {
     calculateBtn.addEventListener('click', function () {
@@ -42,17 +43,23 @@ if (calculateBtn && costResult) {
         // รับจำนวนหน้าจากผู้ใช้
         let pageInput = prompt('กรุณากรอกจำนวนหน้าเว็บไซต์');
 
+        // ตรวจสอบว่าผู้ใช้กดยกเลิกหรือไม่
+        if (pageInput === null) {
+            costResult.textContent = 'คุณยกเลิกการคำนวณราคา';
+            return;
+        }
+
         // แปลงข้อความเป็นตัวเลข
         let pageCount = Number(pageInput);
 
         // ตรวจสอบข้อมูล
         if (
-            pageInput === null ||
             pageInput.trim() === '' ||
             !Number.isInteger(pageCount) ||
             pageCount <= 0
         ) {
-            costResult.textContent = 'กรุณากรอกจำนวนหน้าเป็นตัวเลขเต็มที่มากกว่า 0';
+            costResult.textContent =
+                'กรุณากรอกจำนวนหน้าเป็นตัวเลขเต็มที่มากกว่า 0';
             return;
         }
 
@@ -63,95 +70,105 @@ if (calculateBtn && costResult) {
         costResult.textContent =
             'จำนวนหน้าเว็บไซต์: ' + pageCount + ' หน้า | ' +
             'ราคาต่อหน้า: ' + pricePerPage + ' บาท | ' +
-            'ราคารวมทั้งหมด: ' + totalCost.toLocaleString('th-TH') + ' บาท';
+            'ราคารวมทั้งหมด: ' +
+            totalCost.toLocaleString('th-TH') + ' บาท';
     });
 }
 
 
 // ==============================
-// 4. ระบบกรองผลงานตามหมวดหมู่
-// ==============================
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card[data-category]');
-const projectsEmpty = document.getElementById('projectsEmpty');
-
-if (filterButtons.length && projectCards.length) {
-    filterButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            const selectedCategory = button.dataset.filter;
-            let visibleCount = 0;
-
-            filterButtons.forEach(function (filterButton) {
-                const isActive = filterButton === button;
-                filterButton.classList.toggle('is-active', isActive);
-                filterButton.setAttribute('aria-pressed', String(isActive));
-            });
-
-            projectCards.forEach(function (card) {
-                const shouldShow =
-                    selectedCategory === 'all' ||
-                    card.dataset.category === selectedCategory;
-
-                card.hidden = !shouldShow;
-
-                if (shouldShow) {
-                    visibleCount += 1;
-                }
-            });
-
-            if (projectsEmpty) {
-                projectsEmpty.hidden = visibleCount !== 0;
-            }
-        });
-    });
-}
-
-
-// ==============================
-// 5. ระบบสลับ Light / Dark Mode
+// 4. ระบบสลับ Light Mode / Dark Mode
 // ==============================
 const themeToggle = document.getElementById('themeToggle');
-const savedThemeKey = 'portfolio-theme';
-
-function applyTheme(theme) {
-    const isDark = theme === 'dark';
-
-    document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
-
-    if (themeToggle) {
-        themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-        themeToggle.setAttribute(
-            'aria-label',
-            isDark ? 'เปลี่ยนเป็นโหมดสว่าง' : 'เปลี่ยนเป็นโหมดมืด'
-        );
-        themeToggle.setAttribute('aria-pressed', String(isDark));
-    }
-}
-
-let initialTheme = 'light';
-
-try {
-    const savedTheme = localStorage.getItem(savedThemeKey);
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-        initialTheme = savedTheme;
-    }
-} catch (error) {
-    // หากเบราว์เซอร์ไม่อนุญาต localStorage ให้ใช้ Light Mode ตามปกติ
-}
-
-applyTheme(initialTheme);
 
 if (themeToggle) {
+
+    // อ่านธีมที่บันทึกไว้
+    let savedTheme = 'light';
+
+    try {
+        savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+    } catch (error) {
+        console.warn('ไม่สามารถอ่านค่าธีมได้');
+    }
+
+    // ฟังก์ชันเปลี่ยนธีม
+    function applyTheme(theme) {
+
+        document.documentElement.dataset.theme = theme;
+
+        const isDark = theme === 'dark';
+
+        themeToggle.textContent = isDark
+            ? '☀️ Light Mode'
+            : '🌙 Dark Mode';
+
+        themeToggle.setAttribute(
+            'aria-pressed',
+            String(isDark)
+        );
+    }
+
+    // ตั้งค่าธีมเริ่มต้น
+    applyTheme(savedTheme);
+
+    // เมื่อกดปุ่มเปลี่ยนธีม
     themeToggle.addEventListener('click', function () {
-        const nextTheme =
-            document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
 
-        applyTheme(nextTheme);
+        const currentTheme =
+            document.documentElement.dataset.theme || 'light';
 
+        const newTheme =
+            currentTheme === 'dark' ? 'light' : 'dark';
+
+        applyTheme(newTheme);
+
+        // บันทึกธีม
         try {
-            localStorage.setItem(savedThemeKey, nextTheme);
+            localStorage.setItem('portfolio-theme', newTheme);
         } catch (error) {
-            // ยังสลับธีมได้ แม้จะบันทึกค่าลง localStorage ไม่ได้
+            console.warn('ไม่สามารถบันทึกค่าธีมได้');
         }
+    });
+}
+
+
+// ==============================
+// 5. ระบบกรองผลงานตามหมวดหมู่
+// ==============================
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+const projectCards = document.querySelectorAll(
+    '#projects .projects-grid .project-card'
+);
+
+if (filterButtons.length > 0 && projectCards.length > 0) {
+
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener('click', function () {
+
+            // อ่านหมวดหมู่ที่เลือก
+            const selectedCategory = button.dataset.filter;
+
+            // เปลี่ยนสถานะปุ่มที่เลือก
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove('is-active');
+            });
+
+            button.classList.add('is-active');
+
+            // กรองรายการผลงาน
+            projectCards.forEach(function (card) {
+
+                const cardCategory = card.dataset.category;
+
+                const shouldShow =
+                    selectedCategory === 'all' ||
+                    cardCategory === selectedCategory;
+
+                card.hidden = !shouldShow;
+            });
+        });
     });
 }
