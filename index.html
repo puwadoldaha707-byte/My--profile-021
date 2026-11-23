@@ -27,6 +27,16 @@
             <a href="#estimator">ประมาณราคา</a>
         </nav>
 
+        <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="เปลี่ยนเป็นโหมดมืด"
+            aria-pressed="false"
+        >
+            🌙 Dark Mode
+        </button>
+
     </header>
 
 
@@ -122,9 +132,18 @@
 
             </div>
 
+            <div class="project-filters" role="group" aria-label="กรองผลงานตามหมวดหมู่">
+                <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">ทั้งหมด</button>
+                <button class="filter-btn" type="button" data-filter="web-development" aria-pressed="false">Web Development</button>
+            </div>
+
+            <p id="projectsEmpty" class="projects-empty" hidden>
+                ไม่พบผลงานในหมวดหมู่นี้
+            </p>
+
             <div class="projects-grid">
 
-                <article class="project-card">
+                <article class="project-card" data-category="web-development">
 
                     <h3>My Developer Profile</h3>
 
