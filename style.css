@@ -393,3 +393,189 @@ button:focus-visible {
         width: 100%;
     }
 }
+
+
+/* ==============================
+   13) ระบบกรองผลงานตามหมวดหมู่
+============================== */
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.project-filters .filter-btn {
+  margin: 0;
+  padding: 9px 16px;
+  background: #e2e8f0;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.project-filters .filter-btn:hover,
+.project-filters .filter-btn:focus-visible,
+.project-filters .filter-btn.is-active {
+  background: #1e40af;
+  color: #ffffff;
+  border-color: #1e40af;
+}
+
+.project-card[hidden] {
+  display: none !important;
+}
+
+.projects-empty {
+  margin: 0 0 16px;
+  padding: 14px;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px dashed #93c5fd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ==============================
+   14) ปุ่มสลับ Light / Dark Mode
+============================== */
+
+.site-header .theme-toggle {
+  margin: 0;
+  padding: 9px 14px;
+  background: #ffffff;
+  color: #1e40af;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.site-header .theme-toggle:hover,
+.site-header .theme-toggle:focus-visible {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* Dark theme overrides: ใช้สีเดิมของ Light Mode เป็นค่าเริ่มต้น */
+html[data-theme="dark"] body {
+  color: #e2e8f0;
+  background: #0f172a;
+}
+
+html[data-theme="dark"] .site-header {
+  background: #020617;
+}
+
+html[data-theme="dark"] .profile-card {
+  background: #164e63;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .profile-content h1,
+html[data-theme="dark"] .section-heading h2,
+html[data-theme="dark"] #estimator h2,
+html[data-theme="dark"] .project-card h3 {
+  color: #93c5fd;
+}
+
+html[data-theme="dark"] .eyebrow {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .motto,
+html[data-theme="dark"] .content-section,
+html[data-theme="dark"] #estimator {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+html[data-theme="dark"] .motto {
+  border-left-color: #60a5fa;
+}
+
+html[data-theme="dark"] .motto h2,
+html[data-theme="dark"] .motto p,
+html[data-theme="dark"] #estimator p {
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .skills-list li {
+  background: #273449;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+html[data-theme="dark"] #greetingMessage {
+  color: #bfdbfe;
+}
+
+html[data-theme="dark"] #costResult {
+  background: #172554;
+  color: #dbeafe;
+  border-color: #1d4ed8;
+}
+
+html[data-theme="dark"] .projects-empty {
+  background: #172554;
+  color: #dbeafe;
+  border-color: #3b82f6;
+}
+
+html[data-theme="dark"] .project-filters .filter-btn {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+html[data-theme="dark"] .project-filters .filter-btn:hover,
+html[data-theme="dark"] .project-filters .filter-btn:focus-visible,
+html[data-theme="dark"] .project-filters .filter-btn.is-active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+html[data-theme="dark"] .site-header .theme-toggle {
+  background: #334155;
+  color: #f8fafc;
+  border-color: #64748b;
+}
+
+html[data-theme="dark"] .site-header .theme-toggle:hover,
+html[data-theme="dark"] .site-header .theme-toggle:focus-visible {
+  background: #475569;
+}
+
+html[data-theme="dark"] button {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (max-width: 600px) {
+  .site-header .theme-toggle {
+    align-self: center;
+  }
+
+  .project-filters {
+    gap: 8px;
+  }
+
+  .project-filters .filter-btn {
+    flex: 1 1 auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .site-header,
+  .profile-card,
+  .content-section,
+  .project-card,
+  .skills-list li {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+}
